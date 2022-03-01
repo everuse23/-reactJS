@@ -1,64 +1,102 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Outfit", sans-serif;
-    max-width: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  max-width: auto;
+}
+body {
+  margin: 0;
+  position: relative;
+  padding-bottom: 2.5em;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
 }
 
 header {
-    background-image: url(https://honey.com/images/default/homepage-wooden-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 85px;
-    position: relative;
-  }
+  background-image: url(https://honey.com/images/default/homepage-wooden-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 85px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 50px;
-  }
-  
-  nav li {
-    list-style: none;
-    display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  nav li span {
-    padding-left: 5px;
-  }
-  li a {
-    padding: 5px;
-    background-color: rgb(141, 73, 28);
-    text-decoration: none;
-    border-radius: 3px;
-    color: white;
-  }
-  button {
-    padding: 5px;
-  }
-  .overlay {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    right: 0;
-    bottom: 0;
-    padding: 0 !important;
-    margin: 0 !important;
-    background-color: rgba(10, 10, 10, 10, 0.3);
-  } 
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 50px;
+}
 
-  h1{
-      text-align: center;
-      padding-top: 40px;
-  }
+nav li {
+  list-style: none;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+nav li span {
+  padding-left: 5px;
+}
+li a {
+  padding: 5px;
+  background-color: rgb(141, 73, 28);
+  text-decoration: none;
+  border-radius: 3px;
+  color: white;
+}
+button {
+  padding: 5px;
+}
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: rgba(10, 10, 10, 10, 0.3);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 40px;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: url(https://honey.com/images/default/homepage-wooden-bg.jpg);
+  box-shadow: 0, 2px, 5px, rgba(0, 0, 0, 0.2);
+}
+
+.parrafito {
+  text-align: center;
+  text-transform: uppercase;
+  color: blue;
+  text-decoration: underline;
+  padding-top: 10px;
+}
