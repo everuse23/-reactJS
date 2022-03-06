@@ -93,10 +93,69 @@ footer {
   box-shadow: 0, 2px, 5px, rgba(0, 0, 0, 0.2);
 }
 
-.parrafito {
+.titulito {
   text-align: center;
   text-transform: uppercase;
   color: blue;
   text-decoration: underline;
   padding-top: 10px;
+}
+
+.parrafito {
+  text-align: center;
+  padding-top: 10px;
+}
+.parrafo {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.titulo {
+  text-align: left;
+  font-size: 25px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.boton1 {
+  text-align: center;
+  align-items: space-between;
+  background-color: green;
+}
+
+.boton2 {
+  text-align: center;
+  align-items: space-between;
+
+  background-color: red;
+}
+
+.centrar-boton {
+  padding-top: 10px;
+  text-align: center;
+  align-items: space-between;
+}
+.boton3 {
+  text-align: center;
+  align-items: space-between;
+
+  background-color: rgb(255, 255, 255);
+}
+
+h4 {
+  padding-top: 10px;
+}
+.productos {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  padding-top: 10px;
+  align-items: center;
+  background-color: gray;
+  width: 170px;
+  height: 200px;
+  text-align: center;
 }

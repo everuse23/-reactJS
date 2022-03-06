@@ -3,8 +3,9 @@ import CartWidget from "./components/CartWidget";
 function NavBar() {
   return (
     <header>
-      <div class="overlay">
-        <h1 class="titulo">Colmenares SBM</h1>
+      <div className="overlay">
+        <h1 className="titulo">Colmenares SBM</h1>
+
         <nav>
           <ul>
             <li>
@@ -13,9 +14,9 @@ function NavBar() {
             <li>
               <a href="index.html">Tienda</a>
             </li>
-            <li class="cart">
+            <li className="cart">
               <a href="carrito.html">
-                <CartWidget />
+                <CartWidget className="icono" />
                 Carro<span id="span">0</span>
               </a>
             </li>
