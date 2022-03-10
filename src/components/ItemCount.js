@@ -22,10 +22,10 @@ const ItemCount = (props) => {
         </div>
       </div>
       <div className="centrar-boton">
-        <button onClick={aumentarClick} className="boton1">
+        <button onClick={disminuirClick} className="boton1">
           -
         </button>
-        <button onClick={disminuirClick} className="boton2">
+        <button onClick={aumentarClick} className="boton2">
           +
         </button>
       </div>
