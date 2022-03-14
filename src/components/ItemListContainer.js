@@ -3,7 +3,7 @@ import Item from "./Item";
 let productosIniciales = [
   {
     id: 1,
-    name: "Miel de Eucaliptus",
+    name: "Miel de Eucaliptus              ",
     price: 1000,
     img: "https://roca.toque.com.ar/sistema/uploads/1275/articulos/616157210352.jpg",
     stock: 5,
@@ -22,9 +22,16 @@ let productosIniciales = [
     img: "https://roca.toque.com.ar/sistema/uploads/1275/articulos/616157210352.jpg",
     stock: 5,
   },
+  {
+    id: 4,
+    name: "Miel de Mistol",
+    price: 1200,
+    img: "https://roca.toque.com.ar/sistema/uploads/1275/articulos/616157210352.jpg",
+    stock: 5,
+  },
 ];
 
-const ItemList = () => {
+const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
   useState();
 
@@ -37,7 +44,7 @@ const ItemList = () => {
 
     promesa
       .then((respuestaDeLaApi) => {
-        setProductos(productosIniciales);
+        setProductos(respuestaDeLaApi);
       })
       .catch((errorDeLaApi) => {
         console.log(errorDeLaApi);
@@ -66,4 +73,4 @@ const ItemList = () => {
   );
 };
 
-export default ItemList;
+export default ItemListContainer;

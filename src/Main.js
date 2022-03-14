@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemCount from "./components/ItemCount";
-import ItemList from "./components/ItemList";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 const Main = (props) => {
   useState();
   const miOnAdd = () => {
@@ -11,8 +12,10 @@ const Main = (props) => {
     <main className="container">
       <h1 className="titulito">{props.mensaje}</h1>
       <p className="parrafito">{props.parrafo}</p>
-      <ItemList />
+      <ItemListContainer />
+
       <ItemCount onAdd={miOnAdd} initial={1} />
+      <ItemDetailContainer />
     </main>
   );
 };
