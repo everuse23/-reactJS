@@ -1,24 +1,27 @@
 import CartWidget from "./components/CartWidget";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
     <header>
       <div className="overlay">
-        <h1 className="titulo">Colmenares SBM</h1>
+        <h1 className="titulo">
+          <NavLink to="main">Colmenares SBM</NavLink>
+        </h1>
 
         <nav>
           <ul>
             <li>
-              <a href="index.html">Home</a>
+              <NavLink to="/categoria/1">Nuestras Mieles</NavLink>
             </li>
             <li>
-              <a href="index.html">Tienda</a>
+              <NavLink to="/categoria/2">Otros Productos</NavLink>
             </li>
             <li className="cart">
-              <a href="carrito.html">
+              <NavLink to="/carrito">
                 <CartWidget className="icono" />
                 Carro<span id="span">0</span>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>

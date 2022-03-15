@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import Item from "./Item";
 let productosIniciales = [
   {
     id: 1,
-    name: "Miel de Eucaliptus              ",
+    name: "Miel de Eucaliptus",
     price: 1000,
     img: "https://roca.toque.com.ar/sistema/uploads/1275/articulos/616157210352.jpg",
     stock: 5,
@@ -29,9 +31,17 @@ let productosIniciales = [
     img: "https://roca.toque.com.ar/sistema/uploads/1275/articulos/616157210352.jpg",
     stock: 5,
   },
+  {
+    id: 5,
+    name: "Jalea Real",
+    price: 2500,
+    img: "https://i.blogs.es/3c4173/jalea-real_bote/840_560.jpg",
+    stock: 5,
+  },
 ];
 
 const ItemListContainer = () => {
+  const { id } = useParams();
   const [loading, setLoading] = useState(true);
   useState();
 
@@ -52,7 +62,7 @@ const ItemListContainer = () => {
       .finally(() => {
         setLoading(false);
       });
-  });
+  }, [id]);
 
   const [productos, setProductos] = useState([]);
   return (

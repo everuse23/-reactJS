@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Item = (props) => {
   return (
@@ -7,6 +8,9 @@ const Item = (props) => {
       <h3>{props.name}</h3>
       <p>Stock: {props.stock}</p>
       <p>Precio: {props.price}</p>
+      <Link id="btn1" className="add-cart cart2" to="/item/prod1">
+        Detalles
+      </Link>
     </div>
   );
 };

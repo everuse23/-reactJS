@@ -3,7 +3,7 @@ import ItemDetail from "./ItemDetail";
 
 let mielEuc = [
   {
-    id: 1,
+    id: 5,
     name: "Miel de Eucaliptus",
     price: 1000,
     img: "https://roca.toque.com.ar/sistema/uploads/1275/articulos/616157210352.jpg",
@@ -45,9 +45,8 @@ const ItemDetailContainer = () => {
       {producto &&
         producto.map((producto) => {
           return (
-            <div>
+            <div key={producto.id}>
               <ItemDetail
-                key={producto.id}
                 name={producto.name}
                 img={producto.img}
                 stock={producto.stock}
