@@ -1,19 +1,24 @@
 import { useState } from "react";
 
-const ItemCount = (props) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
   useState();
 
-  const [contador, setContador] = useState(props.initial);
+  const [contador, setContador] = useState(initial);
 
-  const aumentarClick = () => {
-    if (contador < 5) setContador(contador + 1);
+  const aumentarClick = (e) => {
+    if (contador < stock) setContador(contador + 1);
   };
-  const disminuirClick = () => {
-    if (contador >= 2) setContador(contador - 1);
+  const disminuirClick = (e) => {
+    if (contador > initial) setContador(contador - 1);
+  };
+
+  const confirmarClick = (e) => {
+    console.log(e);
+    onAdd(contador);
   };
 
   return (
-    <main className="container">
+    <main className="count">
       <div className="productos">
         <div className="item">
           <p className="parrafo">
@@ -31,8 +36,8 @@ const ItemCount = (props) => {
       </div>
 
       <div className="centrar-boton">
-        <button className="boton3" onClick={props.onAdd}>
-          Comprar
+        <button className="boton3" onClick={confirmarClick}>
+          Agregar al carro
         </button>
       </div>
     </main>

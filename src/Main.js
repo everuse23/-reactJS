@@ -12,7 +12,7 @@ const Main = (props) => {
   };
 
   return (
-    <main className="container">
+    <main className="contenedor">
       <Routes>
         <Route path="main" element={<ItemListContainer />} />
         <Route path="/categoria/:id" element={<ItemListContainer />} />
@@ -20,7 +20,6 @@ const Main = (props) => {
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/carrito" element={<Carrito />} />
       </Routes>
-      <ItemCount onAdd={miOnAdd} initial={1} />;
     </main>
   );
 };

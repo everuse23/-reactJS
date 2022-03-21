@@ -94,7 +94,7 @@ footer {
   bottom: 0px;
   height: 50px;
 }
-.container {
+.contenedor {
   background-image: url(https://honey.com/images/default/homepage-wooden-bg.jpg);
 }
 .titulito {
@@ -183,16 +183,22 @@ h4 {
   padding-top: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 1.2);
   background-color: rgba(233, 233, 233, 0.699);
-  height: 280px;
+  height: 430px;
   margin-left: 10px;
   margin-right: 10px;
+  width: 250px;
+  border-top: 1.2px solid rgb(0, 0, 0);
+  border-left: 1.2px solid rgb(0, 0, 0);
+  border-right: 1.2px solid rgb(0, 0, 0);
+  border-bottom: 1.2px solid rgb(0, 0, 0);
 }
 .product h3 {
   padding-top: 20px;
 }
 
 .img-product {
-  width: 155px;
+  width: 175px;
+  height: 180px;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
@@ -201,7 +207,7 @@ h4 {
   display: flex;
   flex-direction: row;
   padding-left: 75px;
-  padding-top: 20px;
+  padding-top: 72px;
 }
 
 .img-producto {
@@ -220,10 +226,53 @@ h4 {
 .descripcion-producto {
   display: flex;
   flex-direction: column;
-  padding-left: 35px;
-  padding-top: 16px;
+  padding-left: 45px;
+  padding-bottom: 70px;
+  width: 950px;
 }
 
 .p-info {
-  padding-top: 15px;
+  padding-top: 5px;
+}
+.item-count {
+  padding-left: 45px;
+  padding-top: 45px;
+  width: 950px;
+}
+
+.count {
+  width: 250px;
+  padding-top: 0px;
+}
+
+.detail-product {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.detail-product p {
+  padding-top: 3px;
+  text-align: center;
+}
+
+.detalles-btn {
+  background-color: rgb(255, 255, 255);
+}
+.detalles {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  text-align: center;
+  align-items: space-between;
+  border-top: 2.5px solid rgb(0, 0, 0);
+  width: 250px;
+}
+.center {
+  display: flex;
+  padding-left: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+.spinner {
+  text-align: center;
+  padding-top: 100px;
 }
