@@ -127,15 +127,17 @@ footer {
   background-color: red;
   width: 40px;
   font-size: 20px;
+  height: 40px;
 }
 
 .boton2 {
   text-align: center;
   align-items: space-between;
   background-color: green;
-  font-size: 20px;
-  width: 40px;
   margin-left: 10px;
+  width: 40px;
+  font-size: 20px;
+  height: 40px;
 }
 
 .centrar-boton {
@@ -147,8 +149,13 @@ footer {
 .boton3 {
   text-align: center;
   align-items: space-between;
-
+  height: 40px;
   background-color: rgb(255, 255, 255);
+  width: 150px;
+  margin-left: 10px;
+  height: 40px;
+  margin-top: 10px;
+  padding-top: 8px;
 }
 
 h4 {
@@ -275,4 +282,18 @@ h4 {
 .spinner {
   text-align: center;
   padding-top: 100px;
+}
+.link-carrito {
+  text-align: center;
+}
+.item-carro {
+   top: 0;
+  left: 0;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: rgba(10, 10, 10, 10, 0.3);
+  display: inline-block;
 }

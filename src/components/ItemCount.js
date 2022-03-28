@@ -1,46 +1,53 @@
-import { useState } from "react";
-
-const ItemCount = ({ stock, initial, onAdd }) => {
-  useState();
-
+import { React, useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import CartWidget from "./CartWidget";
+const ItemCount = ({ initial, max, OnAdd }) => {
   const [contador, setContador] = useState(initial);
+  const [renderizado, setRenderizado] = useState(true);
 
-  const aumentarClick = (e) => {
-    if (contador < stock) setContador(contador + 1);
+  const addProduct = () => {
+    if (contador < max) setContador(contador + 1);
   };
-  const disminuirClick = (e) => {
-    if (contador > initial) setContador(contador - 1);
+  const removeProduct = () => {
+    if (contador > 0) setContador(contador - 1);
   };
 
-  const confirmarClick = (e) => {
-    console.log(e);
-    onAdd(contador);
+  const AddtoCart = () => {
+    OnAdd(contador);
+    setRenderizado(false);
+    toast.success("Se ha añadido los productos al carrito");
   };
 
   return (
-    <main className="count">
-      <div className="productos">
-        <div className="item">
-          <p className="parrafo">
-            Unidades: <b>{contador}</b>
-          </p>
+    <div className="centrar-boton">
+      <p>Cantidad : {contador}</p>
+      {renderizado ? (
+        <div>
+          <button className="boton1" onClick={removeProduct}>
+            -
+          </button>
+          <button className="boton3" onClick={AddtoCart}>
+            Añadir al carrito
+          </button>
+          <button className="boton2" onClick={addProduct}>
+            +
+          </button>
         </div>
-      </div>
-      <div className="centrar-boton">
-        <button onClick={disminuirClick} className="boton1">
-          -
-        </button>
-        <button onClick={aumentarClick} className="boton2">
-          +
-        </button>
-      </div>
-
-      <div className="centrar-boton">
-        <button className="boton3" onClick={confirmarClick}>
-          Agregar al carro
-        </button>
-      </div>
-    </main>
+      ) : (
+        <ul
+          className="link-carrito"
+          style={{
+            backgroundImage:
+              "https://honey.com/images/default/homepage-wooden-bg.jpg",
+          }}
+        >
+          <li className="cart">
+            <Link to="/carrito">Carrito</Link>
+          </li>
+        </ul>
+      )}
+    </div>
   );
 };
 

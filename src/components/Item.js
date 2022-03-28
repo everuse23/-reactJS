@@ -1,21 +1,18 @@
 import React from "react";
-import { useState } from "react";
-import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
-const Item = (props) => {
-  useState();
-  const [seleccionado, setSeleccionado] = useState(false);
+const Item = ({ producto }) => {
+  const { productos, id } = producto;
 
   return (
     <div className="product">
       <div className="detail-product">
-        <img className="img-product" src={props.img}></img>
-        <h3>{props.name}</h3>
-        <p>Stock: {props.stock}</p>
-        <p>Precio: {props.price}</p>
+        <img className="img-product" src={productos.img}></img>
+        <h3>{productos.name}</h3>
+        <p>Stock: {productos.stock}</p>
+        <p>Precio: {productos.price}</p>
         <div className="detalles">
-          <Link to={`/item/${props.id}`}>
+          <Link to={`/item/${id}`}>
             <button className="detalles-btn">Detalles</button>
           </Link>
         </div>

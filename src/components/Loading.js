@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Loading = () => {
   return (
-    <div class="spinner">
+    <div className="spinner">
       <Spinner />
     </div>
   );

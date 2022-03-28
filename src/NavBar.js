@@ -12,16 +12,13 @@ function NavBar() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/categoria/1">Nuestras Mieles</NavLink>
+              <NavLink to="/categoria/mieles">Nuestras Mieles</NavLink>
             </li>
             <li>
-              <NavLink to="/categoria/2">Otros Productos</NavLink>
+              <NavLink to="/categoria/otros">Otros Productos</NavLink>
             </li>
             <li className="cart">
-              <NavLink to="/carrito">
-                <CartWidget className="icono" />
-                Carro<span id="span">0</span>
-              </NavLink>
+              <CartWidget className="icono" />
             </li>
           </ul>
         </nav>

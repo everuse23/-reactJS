@@ -1,54 +1,54 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
-
 import ItemCount from "./ItemCount";
-const ItemDetail = (props) => {
-  useState();
+import { Contexto } from "./CartContext";
 
-  const [seleccionado, setSeleccionado] = useState(false);
+const ItemDetail = ({ Item }) => {
+  const { img, name, id, price, descripcion, temporada, region, stock } = Item;
 
-  const [render, setRender] = useState(true);
+  const { AddItem } = Contexto();
 
-  const onAdd = (unidadSeleccionada) => {
-    console.log("Comprando productos...");
-    if (unidadSeleccionada != undefined) {
-      setSeleccionado(unidadSeleccionada);
-      setRender(false);
-    }
+  const OnAdd = (Quantity) => {
+    AddItem({
+      Item: Item,
+      Quantity: Quantity,
+      name: name,
+      id: id,
+      price: price,
+      img: img,
+      stock: stock,
+      temporada: temporada,
+      region: region,
+    });
   };
 
   return (
     <div className="info-producto">
-      <img className="img-producto" src={props.img}></img>
+      <img className="img-producto" src={img}></img>
       <div className="descripcion-producto">
-        <h3 className="p-info">{props.name}</h3>
+        <h3 className="p-info">{name}</h3>
 
         <p className="p-info">
           <b>Stock: </b>
-          {props.stock}
+          {stock}
         </p>
         <p className="p-info">
-          <b>Precio:</b> {props.price}
+          <b>Precio:</b> {price}
         </p>
         <p className="p-info">
-          <b>Descripción:</b> {props.descripcion}
+          <b>Descripción:</b> {descripcion}
         </p>
         <p className="p-info">
-          <b>Fecha de producción:</b> {props.temporada}
+          <b>Fecha de producción:</b> {temporada}
         </p>
         <p className="p-info">
-          <b>Región:</b> {props.region}
+          <b>Región:</b> {region}
         </p>
       </div>
       <div className="item-count">
-        {render ? <ItemCount onAdd={onAdd} initial={1} stock={5} /> : ""}
-        <p className="center">
-          {seleccionado
-            ? "Ya seleccionaste tus productos, haz click en el carro para verlos"
-            : "No haz elegido ningún producto"}
-        </p>
-        {seleccionado ? <Link to="/carrito">Chequea el carro!</Link> : null}
+        <ItemCount OnAdd={OnAdd} initial={1} max={5} />
+        <p className="center"></p>
+        <Link to="/carrito"></Link>
       </div>
     </div>
   );
