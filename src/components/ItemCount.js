@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import CartWidget from "./CartWidget";
 const ItemCount = ({ initial, max, OnAdd }) => {
   const [contador, setContador] = useState(initial);
@@ -16,7 +15,6 @@ const ItemCount = ({ initial, max, OnAdd }) => {
   const AddtoCart = () => {
     OnAdd(contador);
     setRenderizado(false);
-    toast.success("Se ha añadido los productos al carrito");
   };
 
   return (

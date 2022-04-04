@@ -12,6 +12,13 @@ const CartContextProvider = ({ children }) => {
     return found;
   };
 
+  const totalPrice = () => {
+    return CartList.reduce(
+      (total, item) => total + item.price * item.Quantity,
+      0
+    );
+  };
+
   const AddItem = (Item, Quantity) => {
     isInCart(Item.id)
       ? SetCartList(
@@ -39,6 +46,7 @@ const CartContextProvider = ({ children }) => {
         AddItem,
         removeItem,
         Clear,
+        totalPrice,
       }}
     >
       {children}
