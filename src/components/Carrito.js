@@ -46,7 +46,7 @@ const Carrito = () => {
           position: "bottom-center",
           autoClose: false,
           hideProgressBar: true,
-          closeOnClick: false,
+          closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
@@ -57,7 +57,7 @@ const Carrito = () => {
 
   setTimeout(() => {
     setLoading(false);
-  }, 800);
+  }, 300);
 
   return (
     <div>
@@ -81,44 +81,67 @@ const Carrito = () => {
               <div>
                 <div>
                   {CartList.map((item) => (
-                    <div key={item.id}>
-                      <img src={item.img} />
-                      <h1>Producto:{item.name} </h1> <br />
-                      <h2>Cantidad:{item.Quantity}</h2> <br />
-                      <h3>Precio:{item.price * item.Quantity}</h3> <br />
-                      <button onClick={() => removeItem(item.id)}>
-                        Borrar producto
-                      </button>
+                    <div className="carrito" key={item.id}>
+                      <img className="imgs" src={item.img} />
+                      <div className="carrito-prod">
+                        <h4 className="atr-carrito">
+                          <b>Producto:</b> {item.name}{" "}
+                        </h4>{" "}
+                        <br />
+                        <h5 className="atr-carrito">
+                          <b>Cantidad:</b> {item.Quantity}
+                        </h5>{" "}
+                        <br />
+                        <h5 className="atr-carrito">
+                          <b>Precio:</b> {item.price * item.Quantity}
+                        </h5>{" "}
+                        <br />
+                        <button
+                          className="bot-carro"
+                          onClick={() => removeItem(item.id)}
+                        >
+                          Borrar producto
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div className="precio-total">
                   <div className="total-price">
-                    Precio total: ${totalPrice()}{" "}
+                    <b>Precio total:</b> <b>${totalPrice()}</b>{" "}
                   </div>
+                  <button className="bot-carro" onClick={() => Clear()}>
+                    Vaciar Carrito
+                  </button>
                 </div>
               </div>
-              <button onClick={() => Clear()}>Vaciar Carrito</button>
+
               <form>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Nombre"
-                  onChange={getData}
-                />
-                <input
-                  type="text"
-                  name="telefono"
-                  placeholder="Telefono"
-                  onChange={getData2}
-                />
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                  onChange={getData3}
-                />
-                <button onClick={finalizarCompra}>Finalizar compra</button>
+                <p className="p">Dejanos tus datos para finalizar la compra</p>
+                <div className="formulario">
+                  <input
+                    className="form1"
+                    type="text"
+                    name="username"
+                    placeholder="Nombre"
+                    onChange={getData}
+                  />
+                  <input
+                    className="form2"
+                    type="text"
+                    name="telefono"
+                    placeholder="Telefono"
+                    onChange={getData2}
+                  />
+                  <input
+                    className="form3"
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    onChange={getData3}
+                  />
+                  <button onClick={finalizarCompra}>Finalizar compra</button>
+                </div>
               </form>
             </div>
           )}

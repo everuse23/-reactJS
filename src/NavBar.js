@@ -6,7 +6,7 @@ function NavBar() {
     <header>
       <div className="overlay">
         <h1 className="titulo">
-          <NavLink to="main">Colmenares SBM</NavLink>
+          <NavLink to="/">Colmenares SBM</NavLink>
         </h1>
 
         <nav>

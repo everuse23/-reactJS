@@ -18,7 +18,7 @@ const CartWidget = () => {
         <Link to="/Carrito">
           {" "}
           Carrito
-          <div className="item-carro">{itemsInCart}</div>
+          <div className="item-carro"> {itemsInCart}</div>
           <FaShoppingCart />
         </Link>
       ) : (
